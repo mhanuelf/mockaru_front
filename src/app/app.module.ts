@@ -1,24 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { ClientsComponent } from './clients/clients.component';
 import { PqrComponent } from './pqr/pqr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PqrService } from './pqr/pqr.service';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   declarations: [
-    AppComponent,
     ProductsComponent,
     ClientsComponent,
     PqrComponent,
     DashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    GoogleChartsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PqrService],
+  bootstrap: [PqrComponent]
 })
 export class AppModule { }
