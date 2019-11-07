@@ -1,70 +1,71 @@
-<div class="divClass">
-  <accordion>
-    <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
-      <h1>{{product.name}}</h1>
-      <ul>
-        <li>Peticiones: {{product.peticiones}}</li>
-        <li>Quejas: {{product.quejas}}</li>
-        <li>Reclamos: {{product.reclamos}}</li>
-      </ul>
+<h1>
+    {{product.name}}</h1>
 
-       <h2 >Peticiones</h2>
-      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped" >
-        <thead>
-          <tr>
-            <th>Descripción</th>
-            <th>Cantidad Registros</th>
-            <th>Cantidad Clientes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of pqrCollection">
-            <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
-            <td>{{row.cantidadQuejas}}</td>
-            <td>{{row.cantidadClientes}}</td>
-          </tr>
-        </tbody>
-      </table>
+<ngb-tabset type="pills">
+    <ngb-tab>
+        <ng-template ngbTabTitle><b>Peticiones</b> ({{product.peticiones}})</ng-template>
+        <ng-template ngbTabContent>
+            <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Cantidad peticiones</th>
+                        <th>Cantidad clientes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of pqrCollection | pqrFilter:{tipoRadicacion:'P'}">
+                        <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
+                        <td>{{row.cantidadQuejas}}</td>
+                        <td>{{row.cantidadClientes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
 
-      <h2>Quejas</h2>
+    <ngb-tab>
+        <ng-template ngbTabTitle><b>Quejas</b> ({{product.quejas}})</ng-template>
+        <ng-template ngbTabContent>
+            <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Cantidad quejas</th>
+                        <th>Cantidad clientes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of pqrCollection | pqrFilter:{tipoRadicacion:'Q'}">
+                        <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
+                        <td>{{row.cantidadQuejas}}</td>
+                        <td>{{row.cantidadClientes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
 
-      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
-        <thead>
-          <tr>
-            <th>Descripción</th>
-            <th>Cantidad Registros</th>
-            <th>Cantidad Clientes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of pqrCollection">
-            <td>{{row.descripcionCaso}}</td>
-            <td>{{row.cantidadQuejas}}</td>
-            <td>{{row.cantidadClientes}}</td>
-          </tr>
-        </tbody>
-      </table>
+    <ngb-tab>
+        <ng-template ngbTabTitle><b>Reclamos</b> ({{product.reclamos}})</ng-template>
+        <ng-template ngbTabContent>
+            <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Cantidad reclamos</th>
+                        <th>Cantidad clientes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of pqrCollection | pqrFilter:{tipoRadicacion:'R'}">
+                        <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
+                        <td>{{row.cantidadQuejas}}</td>
+                        <td>{{row.cantidadClientes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
 
-
-      <h2>Reclamos</h2>
-      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
-        <thead>
-          <tr>
-            <th>Descripción</th>
-            <th>Cantidad Registros</th>
-            <th>Cantidad Clientes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of pqrCollection">
-            <td>{{row.descripcionCaso}}</td>
-            <td>{{row.cantidadQuejas}}</td>
-            <td>{{row.cantidadClientes}}</td>
-          </tr>
-        </tbody>
-      </table>
-
-
-    </accordion-group>
-  </accordion>
-</div>
+</ngb-tabset>

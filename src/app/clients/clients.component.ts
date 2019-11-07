@@ -12,17 +12,24 @@ export class ClientsComponent implements OnInit {
   clientCollection: any = [];
   constructor(private route: ActivatedRoute, private router: Router, private clientsService: ClientsService) { }
 
-    isFirstOpen = true;
-    ngOnInit() {
+  isFirstOpen = true;
+
+pqrText:String;
+
+  ngOnInit() {
 
     this.route.params.subscribe(params => {
-        this.clientsService.getComplain(params.id)
-          .subscribe(resp => {
-            this.clientCollection = resp;
-          });
-      });
-    }
-  
-  
+      this.pqrText = params.id;
+      this.clientsService.getComplain(params.id)
+        .subscribe(resp => {
+          this.clientCollection = resp;
+        });
+    });
+  }
+
+  showFinancialInfo(identificacion) {
+    this.router.navigate(['financial-info/',identificacion]);
+  }
+
 
 }

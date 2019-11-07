@@ -13,12 +13,15 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FinancialInfoComponent } from './financial-info/financial-info.component';
 import { FinancialInfoService } from './financial-info/financial-info.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { PqrFilter } from './pqr/pqr.filter';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ClientsComponent,
     PqrComponent,
+    PqrFilter,
     DashboardComponent,
     FinancialInfoComponent
   ],
@@ -28,7 +31,8 @@ import { FinancialInfoService } from './financial-info/financial-info.service';
     HttpClientModule,
     GoogleChartsModule,
     AccordionModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [PqrService, ProductsService,FinancialInfoService],
   bootstrap: [DashboardComponent]

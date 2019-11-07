@@ -40,9 +40,6 @@ export class PqrComponent implements OnInit {
   }
 
   onSelect(selectedItem) {
-
-    console.log("selected: ", selectedItem[0].row);
-    console.log("selectedItem", this.data[selectedItem[0].row][2]);
     this.router.navigate(['products', this.data[selectedItem[0].row][2]]);
   }
 
