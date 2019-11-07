@@ -20,7 +20,7 @@ export class ClientsComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.pqrText = params.descripcionCaso;
-      this.clientsService.getComplain(params.tipoRadicacion,params.descipcionCaso)
+      this.clientsService.getComplain(params.tipoRadicacion,params.descripcionCaso)
         .subscribe(resp => {
           this.clientCollection = resp;
         });

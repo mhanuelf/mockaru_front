@@ -58,4 +58,26 @@
             </table>
         </ng-template>
     </ngb-tab>
+
+    <ngb-tab>
+        <ng-template ngbTabTitle><b>Ofertas!</b></ng-template>
+        <ng-template ngbTabContent>
+            <table st-table="infoFinancieraCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Oferta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of ofertasCollection; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{row.descripcion}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
+
+
 </ngb-tabset>
