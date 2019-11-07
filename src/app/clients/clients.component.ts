@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientsService } from './clients.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,24 +8,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-
-  constructor() { }
+  client: any = {};
+  clientCollection: any = [];
+  constructor(private route: ActivatedRoute, private router: Router, private clientsService: ClientsService) { }
 
     isFirstOpen = true;
     ngOnInit() {
 
-     /* this.route.params.subscribe(params => {
-        this.productsService.getProduct(params.id)
+    this.route.params.subscribe(params => {
+        this.clientsService.getComplain(params.id)
           .subscribe(resp => {
-            this.product = resp;
+            this.clientCollection = resp;
           });
-  
-        this.productsService.getPQR(params.id)
-          .subscribe(resp => {
-            this.pqrCollection = resp;
-          });
-  
-      });*/
+      });
     }
   
   

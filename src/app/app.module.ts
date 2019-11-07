@@ -13,7 +13,6 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     ProductsComponent,

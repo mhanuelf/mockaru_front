@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'clients',
     component: ClientsComponent
+  },
+  {
+    path: 'clients/complain/:id',
+    component: ClientsComponent
   }
 ];
 
