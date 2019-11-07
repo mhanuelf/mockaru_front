@@ -1,23 +1,11 @@
-<p>COMMONS PQR</p>
-
-
 
 <accordion>
-   <accordion-group heading="Static Header" [isOpen]="isFirstOpen">
+   <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
       <google-chart #chart
       [title]="title"
       [type]="type"
       [data]="data"
       (select)="onSelect($event)">
    </google-chart>
-   </accordion-group>
-   <accordion-group heading="Another group">
-     <p>Some content</p>
-   </accordion-group>
-   <accordion-group heading="Another group">
-     <p>Some content</p>
-   </accordion-group>
-   <accordion-group heading="Another group">
-     <p>Some content</p>
    </accordion-group>
  </accordion>

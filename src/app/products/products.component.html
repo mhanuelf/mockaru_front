@@ -1,7 +1,10 @@
-<h1>{{product.name}}</h1>
-
-<ul>
+<accordion>
+  <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
+<p>{{product.name}}</p>
+    <ul>
   <li>Peticiones: {{product.peticiones}}</li>
   <li>Quejas: {{product.quejas}}</li>
   <li>Reclamos: {{product.reclamos}}</li>
 </ul>
+</accordion-group>
+</accordion>

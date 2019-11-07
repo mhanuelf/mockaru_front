@@ -26,6 +26,7 @@ export class PqrComponent implements OnInit {
   height = 400;
 
   isFirstOpen = true;
+  customClass = 'customClass';
 
   constructor(private route: ActivatedRoute, private router: Router, private pqrService: PqrService) { }
 

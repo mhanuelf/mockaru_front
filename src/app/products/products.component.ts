@@ -11,7 +11,8 @@ import Products from './products';
 export class ProductsComponent implements OnInit {
 
   product: any = {};
-
+  isFirstOpen = true;
+  customClass = 'customClass';
   constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) { }
 
   ngOnInit() {
