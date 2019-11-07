@@ -9,6 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PqrService } from './pqr/pqr.service';
 import { ProductsService } from './products/products.service';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { GoogleChartsModule } from 'angular-google-charts';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    AccordionModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [PqrService, ProductsService],
   bootstrap: [DashboardComponent]

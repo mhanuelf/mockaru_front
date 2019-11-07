@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { PqrService } from './pqr.service';
 
+
+
 @Component({
   selector: 'app-pqr',
   templateUrl: './pqr.component.html',
@@ -23,6 +25,8 @@ export class PqrComponent implements OnInit {
   width = 550;
   height = 400;
 
+  isFirstOpen = true;
+
   constructor(private route: ActivatedRoute, private router: Router, private pqrService: PqrService) { }
 
   ngOnInit() {
@@ -31,6 +35,7 @@ export class PqrComponent implements OnInit {
       .subscribe((data: PqrPieChart[]) => {
         this.data = data;
       });
+
   }
 
   onSelect(selectedItem) {
