@@ -1,3 +1,8 @@
 .panel.customClass .panel-body {
     background-color: #337aa7;
 }
+.divClass {
+    padding-left:"20px"; 
+    padding-top:"20px"; 
+    padding-right:"20px";
+    }
