@@ -8,19 +8,26 @@ import { PqrComponent } from './pqr/pqr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PqrService } from './pqr/pqr.service';
 import { ProductsService } from './products/products.service';
-
 import { GoogleChartsModule } from 'angular-google-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
+import { FinancialInfoComponent } from './financial-info/financial-info.component';
+import { FinancialInfoService } from './financial-info/financial-info.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PqrFilter } from './pqr/pqr.filter';
+import { ClientComplaintsComponent } from './client-complaints/client-complaints.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ClientsComponent,
     PqrComponent,
-    DashboardComponent
-    ],
+    PqrFilter,
+    DashboardComponent,
+    FinancialInfoComponent,
+    ClientComplaintsComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,9 +35,10 @@ import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
     GoogleChartsModule,
     AccordionModule.forRoot(),
     BrowserAnimationsModule,
-    NgxBootstrapSliderModule
+    NgxBootstrapSliderModule,
+    NgbModule
   ],
-  providers: [PqrService, ProductsService],
+  providers: [PqrService, ProductsService, FinancialInfoService],
   bootstrap: [DashboardComponent]
 })
 export class AppModule { }

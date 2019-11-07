@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PqrComponent } from './pqr/pqr.component';
 import { ProductsComponent } from './products/products.component';
+import { FinancialInfoComponent } from './financial-info/financial-info.component';
 import { ClientsComponent } from './clients/clients.component';
 const routes: Routes = [
   {
@@ -15,11 +16,15 @@ const routes: Routes = [
     component: ProductsComponent
   },
   {
+    path: 'financial-info/:id',
+    component: FinancialInfoComponent
+  },
+  {
     path: 'clients',
     component: ClientsComponent
   },
   {
-    path: 'clients/complain/:id',
+    path: 'clients/complain/:tipoRadicacion/:descripcionCaso',
     component: ClientsComponent
   }
 ];

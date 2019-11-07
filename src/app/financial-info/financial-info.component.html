@@ -1,0 +1,61 @@
+<h1>{{client.name}}</h1>
+
+<ul>
+    <li>Documento: {{client.identificationNumber}}</li>
+    <li>Email: {{client.email}}</li>
+    <li>Celular: {{client.phoneNumber}}</li>
+</ul>
+<ngb-tabset type="pills">
+    <ngb-tab>
+        <ng-template ngbTabTitle><b>Canales</b> ({{canalesCollection.length}})</ng-template>
+        <ng-template ngbTabContent>
+            <table st-table="canalesCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Canal</th>
+                        <th>Monto transado</th>
+                        <th>Transacciones últ mes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of canalesCollection">
+                        <td>{{row.usedChannelMonth}}</td>
+                        <td>{{row.amountTransado | currency: '$ '}}</td>
+                        <td>{{row.ussageMonth}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+        <ng-template ngbTabTitle><b>Información Financiera</b> ({{infoFinancieraCollection.length}})</ng-template>
+        <ng-template ngbTabContent>
+            <table st-table="infoFinancieraCollection" st-safe-src="rowCollection" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Contrato</th>
+                        <th>Estado</th>
+                        <th>Importe orginal</th>
+                        <th>Saldo pendiente</th>
+                        <th>Intereses pagados</th>
+                        <th>Importe orginal</th>
+                        <th>Indicador mora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of infoFinancieraCollection">
+                        <td>{{row.descripcion}}</td>
+                        <td>{{row.contrato}}</td>
+                        <td>{{row.estado}}</td>
+                        <td>{{row.importeOriginal | currency: '$ '}}</td>
+                        <td>{{row.saldoPendiente | currency: '$ '}}</td>
+                        <td>{{row.interesesPagados | currency: '$ '}}</td>
+                        <td>{{row.importeOriginal | currency: '$ '}}</td>
+                        <td>{{row.indicadorMora}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>

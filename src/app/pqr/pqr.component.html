@@ -1,29 +1,47 @@
 
-
-<ng-container>
-<accordion>
-   <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
-      <google-chart #chart
-      [title]="title"
-      [type]="type"
-      [data]="data"
-      (select)="onSelect($event)">
-   </google-chart>
-
-   <p>Productos
-         <mv-slider [(value)]="weightProduct" [min]="0" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
-         {{weightProduct}} </p>
-       <p>Canales
-         <mv-slider [(value)]="weightChannel" [min]="0" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
-         {{weightChannel}}
-      </p>
-       <p>Monto
-         <mv-slider [(value)]="weightAmount" [min]="0" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
-         {{weightAmount}}
-      </p>
-      <button (click)="weighing(weightProduct,weightChannel,weightAmount)">Filtrar</button>
-   </accordion-group>
- </accordion>
- 
- 
-</ng-container>
+<google-chart #chart [title]="title" [type]="type" [data]="data" (select)="onSelect($event)">
+</google-chart>
+<p>Productos
+      <mv-slider [(value)]="weightProduct" [min]="0" [max]="100" [enabled]="enabled"></mv-slider>
+      {{weightProduct}} </p>
+    <p>Canales
+      <mv-slider [(value)]="weightChannel" [min]="0" [max]="100" [enabled]="enabled"></mv-slider>
+      {{weightChannel}}
+   </p>
+    <p>Monto
+      <mv-slider [(value)]="weightAmount" [min]="0" [max]="100" [enabled]="enabled"></mv-slider>
+      {{weightAmount}}
+   </p>
+   <button (click)="weighing(weightProduct,weightChannel,weightAmount)">Filtrar</button>
+  
+   
+   
+   <ngb-tabset type="pills">
+   <ngb-tab>
+      <ng-template ngbTabTitle><b>Clientes</b> </ng-template>
+      <ng-template ngbTabContent>
+          <table st-table="clientCollection" st-safe-src="rowCollection" class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Número de Identificación</th>
+                      <th>Cantidad productos</th>
+                      <th>Importe Original</th>
+                      <th>Canales Usados Mes</th>
+                      <th>Valor</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let row of clientCollection">
+                      <td>{{row.NOMBRES}}</td>
+                      <td>{{row.NUMERO_IDENTIFICACION}}</td>
+                      <td>{{row.CANTIDAD_PRODUCTOS}}</td>
+                      <td>{{row.IMPORTE_ORIGINAL}}</td>
+                      <td>{{row.CANALES_USADOS_MES}}</td>
+                      <td>{{row.VALOR}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </ng-template>
+  </ngb-tab>
+</ngb-tabset>

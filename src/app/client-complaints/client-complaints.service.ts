@@ -8,21 +8,17 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientsService {
+export class ClientComplaintsService {
 
-  uri = environment.apiUrl + '/client';
-  uriPqr = environment.apiUrl + '/client/complain';
-
-
+  uri = environment.apiUrl + '/complain/client';
+  
   constructor(private http: HttpClient, private router: Router) { }
 
-  getComplain(tipoRadicacion, descripcionCaso) {
+  getClientComplain(id) {
     return this
       .http
-      .get(`${this.uriPqr}/${tipoRadicacion}/${descripcionCaso}`);
+      .get(`${this.uri}/${id}`);
   }
 
- 
 
-  
 }

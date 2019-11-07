@@ -33,12 +33,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  showComplaint(descripcionCaso) {
-    this.router.navigate(['clients/complain/',descripcionCaso]);
-  }
-
-  show(showProduct){
-    if(showProduct > 0)
-      return true;
+  showComplaint(tipoRadicacion, descripcionCaso) {
+    this.router.navigate(['clients/complain/', tipoRadicacion, descripcionCaso]);
   }
 }
