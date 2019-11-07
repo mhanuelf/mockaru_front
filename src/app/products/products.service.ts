@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductsService {
 
   uri = 'http://127.0.0.1:3000/dashboard/product';
-  uriPqr = 'http://127.0.0.1:3000/dashboard/pqr/';
+  uriPqr = 'http://127.0.0.1:3000/dashboard/pqr';
 
 
   constructor(private http: HttpClient, private router: Router) { }

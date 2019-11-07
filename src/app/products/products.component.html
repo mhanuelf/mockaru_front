@@ -1,7 +1,7 @@
 <div class="divClass">
   <accordion>
     <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
-      <p>{{product.name}}</p>
+      <h1>{{product.name}}</h1>
       <ul>
         <li>Peticiones: {{product.peticiones}}</li>
         <li>Quejas: {{product.quejas}}</li>
@@ -17,23 +17,53 @@
             <th>Cantidad Registros</th>
             <th>Cantidad Clientes</th>
           </tr>
-          <tr>
-            <th colspan="5"><input st-search="" class="form-control" placeholder="search ..." type="text" /></th>
-          </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="row in pqrCollection">
-            <td>{{row[1]}}</td>
-            <td>{{row[2]}}</td>
-            <td>{{row[3]}}}</td>
+          <tr *ngFor="let row of pqrCollection">
+            <td>{{row.descripcionCaso}}</td>
+            <td>{{row.cantidadQuejas}}</td>
+            <td>{{row.cantidadClientes}}</td>
           </tr>
         </tbody>
       </table>
 
       <h2>Quejas</h2>
 
-      <h2>Reclamos</h2>
+      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad Registros</th>
+            <th>Cantidad Clientes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of pqrCollection">
+            <td>{{row.descripcionCaso}}</td>
+            <td>{{row.cantidadQuejas}}</td>
+            <td>{{row.cantidadClientes}}</td>
+          </tr>
+        </tbody>
+      </table>
 
+
+      <h2>Reclamos</h2>
+      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad Registros</th>
+            <th>Cantidad Clientes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of pqrCollection">
+            <td>{{row.descripcionCaso}}</td>
+            <td>{{row.cantidadQuejas}}</td>
+            <td>{{row.cantidadClientes}}</td>
+          </tr>
+        </tbody>
+      </table>
 
 
     </accordion-group>
