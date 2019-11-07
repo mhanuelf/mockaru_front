@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PqrComponent } from './pqr.component';
+import { ProductsComponent } from './products.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccordionModule } from 'ngx-bootstrap/accordion/public_api';
 
 @NgModule({
-  declarations: [PqrComponent],
+  declarations: [ProductsComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

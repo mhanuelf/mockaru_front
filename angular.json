@@ -24,11 +24,12 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
                 "src/assets/js/loader.js",
-                "./bower_components/angular-smart-table"
+                "./bower_components/angular-smart-table/dist/smart-table.min.js"
             ]
           },
           "configurations": {
@@ -92,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -123,6 +125,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mockaru"
 }

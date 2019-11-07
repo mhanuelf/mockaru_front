@@ -1,0 +1,31 @@
+{
+  "name": "mockaru",
+  "description": "Hackathon Ninja Project",
+  "main": "index.html",
+  "authors": [
+    "Mockaru Team - Wilson",
+    "Jimena",
+    "Mhanuel",
+    "danielmo"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "hacktahon",
+    "mockaru",
+    "bbva",
+    "financial",
+    "services"
+  ],
+  "homepage": "https://github.com/mhanuelf/mockaru_front",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-chart": "^2.0.1",
+    "angular-smart-table": "^2.1.11"
+  }
+}

@@ -1,36 +1,41 @@
-<h1>{{product.name}}</h1>
+<div class="divClass">
+  <accordion>
+    <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
+      <p>{{product.name}}</p>
+      <ul>
+        <li>Peticiones: {{product.peticiones}}</li>
+        <li>Quejas: {{product.quejas}}</li>
+        <li>Reclamos: {{product.reclamos}}</li>
+      </ul>
 
-<ul>
-  <li>Peticiones: {{product.peticiones}}</li>
-  <li>Quejas: {{product.quejas}}</li>
-  <li>Reclamos: {{product.reclamos}}</li>
-</ul>
+      <h2>Peticiones</h2>
 
-<h2>Peticiones</h2>
+      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad Registros</th>
+            <th>Cantidad Clientes</th>
+          </tr>
+          <tr>
+            <th colspan="5"><input st-search="" class="form-control" placeholder="search ..." type="text" /></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in pqrCollection">
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}}</td>
+          </tr>
+        </tbody>
+      </table>
 
-<table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
-  <thead>
-    <tr>
-      <th>Descripción</th>
-      <th>Cantidad Registros</th>
-      <th>Cantidad Clientes</th>
-    </tr>
-    <tr>
-      <th colspan="5"><input st-search="" class="form-control" placeholder="search ..." type="text" /></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="row in pqrCollection">
-      <td>{{row[1]}}</td>
-      <td>{{row[2]}}</td>
-      <td>{{row[3]}}}</td>
-    </tr>
-  </tbody>
-</table>
+      <h2>Quejas</h2>
+
+      <h2>Reclamos</h2>
 
 
 
-
-<h2>Quejas</h2>
-
-<h2>Reclamos</h2>
+    </accordion-group>
+  </accordion>
+</div>

@@ -23,6 +23,8 @@
     "angular-google-charts": "^0.1.6",
     "angular-smart-table": "^2.1.11",
     "bower": "^1.8.8",
+    "bootstrap": "4.1.1",
+    "ngx-bootstrap": "^5.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

@@ -12,6 +12,9 @@ export class ProductsComponent implements OnInit {
 
   product: any = {};
   pqrCollection: any = [];
+  isFirstOpen = true;
+  customClass = 'customClass';
+
   constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) { }
 
   ngOnInit() {
