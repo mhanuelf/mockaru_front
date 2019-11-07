@@ -1,6 +1,6 @@
 
 
-<div class="divClass">
+<ng-container>
 <accordion>
    <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
       <google-chart #chart
@@ -9,6 +9,21 @@
       [data]="data"
       (select)="onSelect($event)">
    </google-chart>
+
+   <p>Productos
+         <mv-slider [(value)]="weightProduct" [min]="0" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
+         {{weightProduct}} </p>
+       <p>Canales
+         <mv-slider [(value)]="weightChannel" [min]="0" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
+         {{weightChannel}}
+      </p>
+       <p>Monto
+         <mv-slider [(value)]="weightAmount" [min]="0" [max]="100" [enabled]="enabled" (change)="change()"></mv-slider>
+         {{weightAmount}}
+      </p>
+      <button (click)="weighing(weightProduct,weightChannel,weightAmount)">Filtrar</button>
    </accordion-group>
  </accordion>
-</div>
+ 
+ 
+</ng-container>

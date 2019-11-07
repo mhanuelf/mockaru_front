@@ -12,6 +12,7 @@ import { ProductsService } from './products/products.service';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClientsComponent,
     PqrComponent,
     DashboardComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     GoogleChartsModule,
     AccordionModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxBootstrapSliderModule
   ],
   providers: [PqrService, ProductsService],
   bootstrap: [DashboardComponent]

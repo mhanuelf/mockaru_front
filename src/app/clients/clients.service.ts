@@ -11,6 +11,7 @@ export class ClientsService {
 
   uri = 'http://127.0.0.1:3000/dashboard/client';
   uriPqr = 'http://127.0.0.1:3000/dashboard/client/complain';
+  
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -20,4 +21,8 @@ export class ClientsService {
       .http
       .get(`${this.uriPqr}/${descripcionCaso}`);
   }
+
+ 
+
+  
 }

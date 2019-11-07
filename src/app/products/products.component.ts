@@ -14,9 +14,7 @@ export class ProductsComponent implements OnInit {
   pqrCollection: any = [];
   isFirstOpen = true;
   customClass = 'customClass';
-  filterargs = {title: 'PR'};
-  show = true;
-
+  
   constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) { }
 
   ngOnInit() {
@@ -39,13 +37,8 @@ export class ProductsComponent implements OnInit {
     this.router.navigate(['clients/complain/',descripcionCaso]);
   }
 
-/*  transform(items: any[], filter: Object): any {
-    if (!items || !filter) {
-        return items;
-    }
-    // filter items array, items which match and return true will be
-    // kept, false will be filtered out
-    return items.filter(item => item.title.indexOf(filter) !== -1);
-}*/
-
+  show(showProduct){
+    if(showProduct > 0)
+      return true;
+  }
 }

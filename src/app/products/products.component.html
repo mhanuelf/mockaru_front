@@ -7,7 +7,7 @@
         <li>Quejas: {{product.quejas}}</li>
         <li>Reclamos: {{product.reclamos}}</li>
       </ul>
-
+      <ng-container *ngIf="show(product.peticiones)">
        <h2 >Peticiones</h2>
       <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped" >
         <thead>
@@ -25,7 +25,9 @@
           </tr>
         </tbody>
       </table>
+      </ng-container>
 
+      <ng-container *ngIf="show(product.quejas)">
       <h2>Quejas</h2>
 
       <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
@@ -44,8 +46,8 @@
           </tr>
         </tbody>
       </table>
-
-
+    </ng-container>
+    <ng-container *ngIf="show(product.reclamos)">
       <h2>Reclamos</h2>
       <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
         <thead>
@@ -63,8 +65,7 @@
           </tr>
         </tbody>
       </table>
-
-
-    </accordion-group>
+      </ng-container>
+      </accordion-group>
   </accordion>
 </div>
