@@ -10,15 +10,15 @@ import { environment } from '../../environments/environment';
 })
 export class ClientsService {
 
-  uri = environment.apiUrl+'/client';
-  uriPqr = environment.apiUrl+'/client/complain';
+  uri = environment.apiUrl + '/client';
+  uriPqr = environment.apiUrl + '/client/complain';
 
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  getComplain(descripcionCaso) {
+  getComplain(tipoRadicacion, descripcionCaso) {
     return this
       .http
-      .get(`${this.uriPqr}/${descripcionCaso}`);
+      .get(`${this.uriPqr}/${tipoRadicacion}/${descripcionCaso}`);
   }
 }

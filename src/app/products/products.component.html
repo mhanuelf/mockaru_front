@@ -15,7 +15,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let row of pqrCollection | pqrFilter:{tipoRadicacion:'P'}">
-                        <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
+                        <td (click)="showComplaint(row.tipoRadicacion, row.descripcionCaso)">{{row.descripcionCaso}}</td>
                         <td>{{row.cantidadQuejas}}</td>
                         <td>{{row.cantidadClientes}}</td>
                     </tr>
@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let row of pqrCollection | pqrFilter:{tipoRadicacion:'Q'}">
-                        <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
+                        <td (click)="showComplaint(row.tipoRadicacion, row.descripcionCaso)">{{row.descripcionCaso}}</td>
                         <td>{{row.cantidadQuejas}}</td>
                         <td>{{row.cantidadClientes}}</td>
                     </tr>
@@ -59,7 +59,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let row of pqrCollection | pqrFilter:{tipoRadicacion:'R'}">
-                        <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
+                        <td (click)="showComplaint(row.tipoRadicacion, row.descripcionCaso)">{{row.descripcionCaso}}</td>
                         <td>{{row.cantidadQuejas}}</td>
                         <td>{{row.cantidadClientes}}</td>
                     </tr>

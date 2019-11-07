@@ -24,7 +24,7 @@ const routes: Routes = [
     component: ClientsComponent
   },
   {
-    path: 'clients/complain/:id',
+    path: 'clients/complain/:tipoRadicacion/:descripcionCaso',
     component: ClientsComponent
   }
 ];

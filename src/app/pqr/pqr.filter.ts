@@ -11,6 +11,6 @@ export class PqrFilter implements PipeTransform {
         }
         // filter items array, items which match and return true will be
         // kept, false will be filtered out
-        return items.filter(item => item.tipoRadicacion.indexOf(filter.tipoRadicacion) !== -1);
+        return items.filter(item => item.tipoRadicacion.indexOf(filter["tipoRadicacion"]) !== -1);
     }
 }

@@ -14,13 +14,13 @@ export class ClientsComponent implements OnInit {
 
   isFirstOpen = true;
 
-pqrText:String;
+  pqrText: String;
 
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      this.pqrText = params.id;
-      this.clientsService.getComplain(params.id)
+      this.pqrText = params.descripcionCaso;
+      this.clientsService.getComplain(params.tipoRadicacion,params.descipcionCaso)
         .subscribe(resp => {
           this.clientCollection = resp;
         });
@@ -28,7 +28,7 @@ pqrText:String;
   }
 
   showFinancialInfo(identificacion) {
-    this.router.navigate(['financial-info/',identificacion]);
+    this.router.navigate(['financial-info/', identificacion]);
   }
 
 

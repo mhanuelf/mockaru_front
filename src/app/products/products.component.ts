@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
   pqrCollection: any = [];
   isFirstOpen = true;
   customClass = 'customClass';
-  filterargs = {title: 'PR'};
+  filterargs = { title: 'PR' };
   show = true;
 
   constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) { }
@@ -35,17 +35,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  showComplaint(descripcionCaso) {
-    this.router.navigate(['clients/complain/',descripcionCaso]);
+  showComplaint(tipoRadicacion, descripcionCaso) {
+    this.router.navigate(['clients/complain/', tipoRadicacion, descripcionCaso]);
   }
-
-/*  transform(items: any[], filter: Object): any {
-    if (!items || !filter) {
-        return items;
-    }
-    // filter items array, items which match and return true will be
-    // kept, false will be filtered out
-    return items.filter(item => item.title.indexOf(filter) !== -1);
-}*/
-
 }
