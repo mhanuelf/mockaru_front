@@ -8,6 +8,7 @@ import { PqrComponent } from './pqr/pqr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PqrService } from './pqr/pqr.service';
 import { ProductsService } from './products/products.service';
+
 import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({

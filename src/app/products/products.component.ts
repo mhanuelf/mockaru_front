@@ -11,15 +11,20 @@ import Products from './products';
 export class ProductsComponent implements OnInit {
 
   product: any = {};
-
+  pqrCollection: any = [];
   constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) { }
 
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      this.productsService.getProduct(params['id'])
+      this.productsService.getProduct(params.id)
         .subscribe(resp => {
           this.product = resp;
+        });
+
+      this.productsService.getPQR(params.id)
+        .subscribe(resp => {
+          this.pqrCollection = resp;
         });
 
     });
