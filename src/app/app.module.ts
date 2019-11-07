@@ -7,6 +7,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { PqrComponent } from './pqr/pqr.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PqrService } from './pqr/pqr.service';
+import { ProductsService } from './products/products.service';
 import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
@@ -22,7 +23,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
     HttpClientModule,
     GoogleChartsModule
   ],
-  providers: [PqrService],
-  bootstrap: [PqrComponent]
+  providers: [PqrService, ProductsService],
+  bootstrap: [DashboardComponent]
 })
 export class AppModule { }

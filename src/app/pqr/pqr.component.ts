@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import PqrPieChart from './pqr.piechart';
+
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { PqrService } from './pqr.service';
 
 @Component({
@@ -16,11 +19,11 @@ export class PqrComponent implements OnInit {
   columnNames = ['Producto', 'Cantidad'];
   options = {
   };
-  data  =[];
+  data = [];
   width = 550;
   height = 400;
 
-  constructor(private pqrService: PqrService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private pqrService: PqrService) { }
 
   ngOnInit() {
     this.pqrService
@@ -31,8 +34,10 @@ export class PqrComponent implements OnInit {
   }
 
   onSelect(selectedItem) {
+
     console.log("selected: ", selectedItem[0].row);
     console.log("selectedItem", this.data[selectedItem[0].row][2]);
+    this.router.navigate(['products', this.data[selectedItem[0].row][2]]);
   }
 
 
