@@ -8,9 +8,8 @@
         <li>Reclamos: {{product.reclamos}}</li>
       </ul>
 
-      <h2>Peticiones</h2>
-
-      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped">
+       <h2 >Peticiones</h2>
+      <table st-table="pqrCollection" st-safe-src="rowCollection" class="table table-striped" >
         <thead>
           <tr>
             <th>Descripción</th>
@@ -20,7 +19,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let row of pqrCollection">
-            <td>{{row.descripcionCaso}}</td>
+            <td (click)="showComplaint(row.descripcionCaso)">{{row.descripcionCaso}}</td>
             <td>{{row.cantidadQuejas}}</td>
             <td>{{row.cantidadClientes}}</td>
           </tr>

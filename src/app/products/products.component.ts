@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './products.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import Products from './products';
+
 
 @Component({
   selector: 'app-products',
@@ -14,6 +14,8 @@ export class ProductsComponent implements OnInit {
   pqrCollection: any = [];
   isFirstOpen = true;
   customClass = 'customClass';
+  filterargs = {title: 'PR'};
+  show = true;
 
   constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) { }
 
@@ -32,5 +34,18 @@ export class ProductsComponent implements OnInit {
 
     });
   }
+
+  showComplaint(descripcionCaso) {
+    this.router.navigate(['clients/complain/',descripcionCaso]);
+  }
+
+/*  transform(items: any[], filter: Object): any {
+    if (!items || !filter) {
+        return items;
+    }
+    // filter items array, items which match and return true will be
+    // kept, false will be filtered out
+    return items.filter(item => item.title.indexOf(filter) !== -1);
+}*/
 
 }

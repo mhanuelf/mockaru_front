@@ -1,1 +1,30 @@
-<p>clients works!</p>
+<div class="divClass">
+    <accordion>
+       <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
+        <p>PETICION</p>  
+        <p>Este producto cobra intereses que superan la tasa de usura     </p>     
+        <accordion>
+         <accordion-group heading="CLIENTES" [isOpen]="isFirstOpen" [panelClass]="customClass">
+            <table st-table="clientCollection" st-safe-src="rowCollection" class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Cédula</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let row of clientCollection">
+                        <td>{{row.identificacion}}</td>
+                        <td>{{row.nombre}}</td>
+                        <td>{{row.telefono}}</td>
+                        <td>{{row.email}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+        </accordion-group>
+    </accordion>
+       </accordion-group>
+     </accordion>
+    </div>
