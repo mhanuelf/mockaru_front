@@ -1,0 +1,57 @@
+<div class="divClass">
+  <accordion>
+    <accordion-group heading="MOCKARU" [isOpen]="isFirstOpen" [panelClass]="customClass">
+      <h1>{{client.name}}</h1>
+      <ul>
+        <li>Documento: {{client.identificationNumber}}</li>
+        <li>Email: {{client.email}}</li>
+        <li>Celular: {{client.phoneNumber}}</li>
+      </ul>
+
+      <h2>Canales</h2>
+
+      <table st-table="canalesCollection" st-safe-src="rowCollection" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Canal</th>
+            <th>Monto Transado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of canalesCollection">
+            <td>{{row.usedChannelMonth}}</td>
+            <td>{{row.ussageMonth}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Información Financiera</h2>
+
+      <table st-table="infoFinancieraCollection" st-safe-src="rowCollection" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Contrato</th>
+            <th>Estado</th>
+            <th>Importe orginal</th>
+            <th>Saldo pendiente</th>
+            <th>Intereses pagados</th>
+            <th>Importe orginal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of infoFinancieraCollection">
+            <td>{{row.descripcion}}</td>
+            <td>{{row.contrato}}</td>
+            <td>{{row.cantidadClientes}}</td>
+            <td>{{row.estado}}</td>
+            <td>{{row.importeOriginal}}</td>
+            <td>{{row.saldoPendiente}}</td>
+            <td>{{row.interesesPagados}}</td>
+            <td>{{row.indicadorMora}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </accordion-group>
+  </accordion>
+</div>
