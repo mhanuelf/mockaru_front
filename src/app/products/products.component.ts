@@ -33,4 +33,8 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  onClick() {
+    this.router.navigate(['clients']);
+  }
+
 }

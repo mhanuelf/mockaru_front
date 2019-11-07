@@ -28,8 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-                "src/assets/js/loader.js",
-                "./bower_components/angular-smart-table/dist/smart-table.min.js"
+                "src/assets/js/loader.js"
             ]
           },
           "configurations": {
