@@ -48,7 +48,10 @@ export class PqrComponent implements OnInit {
       });
 
   }
-
+  
+  showComplaintClient(id) {
+    this.router.navigate(['/complain/client', id ]);
+  }
   onSelect(selectedItem) {
     this.router.navigate(['products', this.data[selectedItem[0].row][2]]);
   }

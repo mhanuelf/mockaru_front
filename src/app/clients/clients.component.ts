@@ -31,5 +31,7 @@ export class ClientsComponent implements OnInit {
     this.router.navigate(['financial-info/', identificacion]);
   }
 
+  
+
 
 }

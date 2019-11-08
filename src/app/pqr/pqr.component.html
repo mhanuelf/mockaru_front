@@ -33,11 +33,11 @@
               </thead>
               <tbody>
                   <tr *ngFor="let row of clientCollection">
-                      <td>{{row.NOMBRES}}</td>
+                      <td (click)="showComplaintClient(row.NUMERO_IDENTIFICACION)" >{{row.NOMBRES}}</td>
                       <td>{{row.NUMERO_IDENTIFICACION}}</td>
                       <td>{{row.CANTIDAD_PRODUCTOS}}</td>
                       <td>{{row.IMPORTE_ORIGINAL}}</td>
-                      <td>{{row.CANALES_USADOS_MES}}</td>
+                      <td>{{row.CANAL_USADOS_MES}}</td>
                       <td>{{row.VALOR}}</td>
                   </tr>
               </tbody>

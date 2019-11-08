@@ -3,15 +3,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FinancialInfoService {
 
-  uri_client = 'http://127.0.0.1:3000/dashboard/client';
-  uri_canales = 'http://127.0.0.1:3000/dashboard/channel';
-  uri_infoFinanciera = 'http://127.0.0.1:3000/dashboard/client/finantial';
+  uri_client = environment.apiUrl + '/client';
+  uri_canales = environment.apiUrl + '/channel';
+  uri_infoFinanciera = environment.apiUrl + '/client/finantial';
 
   constructor(private http: HttpClient, private router: Router) { }
 

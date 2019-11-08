@@ -1,58 +1,32 @@
 <h1>{{client.name}}</h1>
 
-<ul>
-    <li>Documento: {{client.identificationNumber}}</li>
-    <li>Email: {{client.email}}</li>
-    <li>Celular: {{client.phoneNumber}}</li>
-</ul>
 <ngb-tabset type="pills">
     <ngb-tab>
-        <ng-template ngbTabTitle><b>Canales</b> ({{canalesCollection.length}})</ng-template>
+        <ng-template ngbTabTitle><b>PQR Cliente</b></ng-template>
         <ng-template ngbTabContent>
-            <table st-table="canalesCollection" st-safe-src="rowCollection" class="table table-striped">
+            <table st-table="clientCollection" st-safe-src="rowCollection" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Canal</th>
-                        <th>Monto transado</th>
-                        <th>Transacciones últ mes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let row of canalesCollection">
-                        <td>{{row.usedChannelMonth}}</td>
-                        <td>{{row.amountTransado | currency: '$ '}}</td>
-                        <td>{{row.ussageMonth}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab>
-        <ng-template ngbTabTitle><b>Información Financiera</b> ({{infoFinancieraCollection.length}})</ng-template>
-        <ng-template ngbTabContent>
-            <table st-table="infoFinancieraCollection" st-safe-src="rowCollection" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
+                        <th>Tipo de Radicado</th>
+                        <th>Radicado</th>
+                        <th>Fecha de radicación</th>
+                        <th>Tipo de producto</th>
                         <th>Contrato</th>
-                        <th>Estado</th>
-                        <th>Importe orginal</th>
-                        <th>Saldo pendiente</th>
-                        <th>Intereses pagados</th>
-                        <th>Importe orginal</th>
-                        <th>Indicador mora</th>
+                        <th>Descripción del caso</th>
+                        <th>Area responsable</th>
+                        <th>Fecha de solución</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let row of infoFinancieraCollection">
-                        <td>{{row.descripcion}}</td>
-                        <td>{{row.contrato}}</td>
-                        <td>{{row.estado}}</td>
-                        <td>{{row.importeOriginal | currency: '$ '}}</td>
-                        <td>{{row.saldoPendiente | currency: '$ '}}</td>
-                        <td>{{row.interesesPagados | currency: '$ '}}</td>
-                        <td>{{row.importeOriginal | currency: '$ '}}</td>
-                        <td>{{row.indicadorMora}}</td>
+                    <tr *ngFor="let row of clientCollection">
+                        <td>{{row.TIPO_RADICACION}}</td>
+                        <td>{{row.NUMERO_RADICACION}}</td>
+                        <td>{{row.FECHA_RADICACION}}</td>
+                        <td>{{row.TIPO_PRODUCTO}}</td>
+                        <td>{{row.CONTRATO}}</td>
+                        <td>{{row.DESCRIPCION_CASO}}</td>
+                        <td>{{row.AREA_RESPONSABLE}}</td>
+                        <td>{{row.FECHA_SOLUCION}}</td>
                     </tr>
                 </tbody>
             </table>

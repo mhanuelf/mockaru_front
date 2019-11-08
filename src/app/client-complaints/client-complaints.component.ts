@@ -10,18 +10,20 @@ import { ClientComplaintsService } from './client-complaints.service';
 
 export class ClientComplaintsComponent implements OnInit {
   clientCollection: any = [];
+  client: any = {};
   constructor(private route: ActivatedRoute, private router: Router, private clientComplaintsService: ClientComplaintsService) { }
 
   ngOnInit() {
-    
+    this.route.params.subscribe(params => {
+      this.clientComplaintsService.getClientDetail(params.id)
+        .subscribe(resp => {
+          this.client = resp;
+        });
+
+        this.clientComplaintsService.getClientComplain(params.id)
+      .subscribe(resp => {
+        this.clientCollection = resp;
+      });
+      });
   }
-
-  clientComplain(id){
-    this.clientComplaintsService.getClientComplain(id)
-    .subscribe(resp => {
-    this.clientCollection = resp;
-  });
-
-
-}
 }

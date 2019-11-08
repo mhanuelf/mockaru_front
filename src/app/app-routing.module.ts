@@ -6,6 +6,8 @@ import { PqrComponent } from './pqr/pqr.component';
 import { ProductsComponent } from './products/products.component';
 import { FinancialInfoComponent } from './financial-info/financial-info.component';
 import { ClientsComponent } from './clients/clients.component';
+import { ClientComplaintsComponent } from './client-complaints/client-complaints.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +28,10 @@ const routes: Routes = [
   {
     path: 'clients/complain/:tipoRadicacion/:descripcionCaso',
     component: ClientsComponent
+  },
+  {
+    path: 'complain/client/:id',
+    component: ClientComplaintsComponent
   }
 ];
 

@@ -11,8 +11,11 @@ import { environment } from '../../environments/environment';
 export class ClientComplaintsService {
 
   uri = environment.apiUrl + '/complain/client';
+  uri_client = environment.apiUrl + '/client';
   
   constructor(private http: HttpClient, private router: Router) { }
+
+
 
   getClientComplain(id) {
     return this
@@ -20,5 +23,10 @@ export class ClientComplaintsService {
       .get(`${this.uri}/${id}`);
   }
 
+  getClientDetail(clientId) {
+    return this
+      .http
+      .get(`${this.uri_client}/${clientId}`);
+  }
 
 }
