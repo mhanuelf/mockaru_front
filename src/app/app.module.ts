@@ -17,7 +17,7 @@ import { FinancialInfoService } from './financial-info/financial-info.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PqrFilter } from './pqr/pqr.filter';
 import { ClientComplaintsComponent } from './client-complaints/client-complaints.component';
-
+import { FontAwesomeModule } from 'ngx-icons';
 @NgModule({
   declarations: [
     ProductsComponent,
@@ -36,7 +36,8 @@ import { ClientComplaintsComponent } from './client-complaints/client-complaints
     AccordionModule.forRoot(),
     BrowserAnimationsModule,
     NgxBootstrapSliderModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [PqrService, ProductsService, FinancialInfoService],
   bootstrap: [DashboardComponent]
