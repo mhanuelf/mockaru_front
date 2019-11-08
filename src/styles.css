@@ -9,6 +9,15 @@
     margin-bottom: 1em;
 }
 
+.icon{
+    color: white;
+    padding-left: 90%;
+    position: absolute;
+}
+
+.header .icon { float:right }
+.header .text { float:left }
+
 .mainContainer {
     margin: 15px;
 }
@@ -73,3 +82,6 @@ body {
 .flex-grid-thirds .col {
     width: 32%;
 }
+
+a:link, a:visited { color:#FFFFFF; text-decoration:none;}
+a:hover, a:active  { color:#FFFFFF;  text-decoration:none;}
